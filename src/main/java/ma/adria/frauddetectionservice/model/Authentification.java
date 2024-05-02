@@ -1,5 +1,4 @@
 package ma.adria.frauddetectionservice.model;
 
-public enum EventStatus {
-    SUCCESS, FAILED
+public class Authentification extends Event{
 }
