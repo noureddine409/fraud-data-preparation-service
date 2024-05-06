@@ -1,7 +1,14 @@
 package ma.adria.frauddetectionservice.model;
 
+
+import ma.adria.frauddetectionservice.enums.Canal;
+import ma.adria.frauddetectionservice.enums.ClientSegment;
+import ma.adria.frauddetectionservice.enums.Status;
+
+
 public abstract class Event extends BaseEntity{
-     private Contrat contrat;
+    private String reference;
+    private Contrat contrat;
      private String Motif;
      private DeviceInfo deviceInfo;
      private Location location;
@@ -9,7 +16,7 @@ public abstract class Event extends BaseEntity{
     private ClientSegment segment;
     private String username;
     private EventActor eventActor;
-    private EventStatus status;
+    private Status status;
 
 
 }

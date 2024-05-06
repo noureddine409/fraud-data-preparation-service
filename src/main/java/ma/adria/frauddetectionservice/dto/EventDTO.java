@@ -9,6 +9,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class EventDTO extends BaseDTO{
-    private String header;
+    private String header; // todo class
     private JsonNode body;
 }
