@@ -1,26 +1,25 @@
 package ma.adria.frauddetectionservice.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
-import java.util.Collection;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @Entity
 @Table(name = "contrat")
 public class Contrat extends BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    @Column(unique = true, nullable = false)
     private String contratID;
 
-
-
+    @Builder
+    public Contrat(Long id, LocalDateTime createdAt, LocalDateTime updatedAt, String contratID) {
+        super(id, createdAt, updatedAt);
+        this.contratID = contratID;
+    }
 }
