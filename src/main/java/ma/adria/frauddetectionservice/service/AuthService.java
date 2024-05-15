@@ -1,4 +1,6 @@
 package ma.adria.frauddetectionservice.service;
 
-public interface GeoLocalisationService {
+
+public interface AuthService {
+
 }

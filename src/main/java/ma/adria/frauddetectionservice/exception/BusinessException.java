@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class BusinessException extends RuntimeException {
-
     private String key;
     private Object[] args;
 

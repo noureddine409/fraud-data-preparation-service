@@ -1,7 +1,20 @@
 package ma.adria.frauddetectionservice.model;
 
-public class Location {
-    private String ipAdress;
-    private String ipAdress2;
-    private GeoLocation geolocation;
+import jakarta.persistence.*;
+import lombok.*;
+import ma.adria.frauddetectionservice.dto.GeolocationDto;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Entity
+@Table(name = "location")
+public class Location extends BaseEntity{
+    private String ipAddress;
+    private String ipAddress2;
+    @ManyToOne
+    private Geolocation geolocation;
 }
