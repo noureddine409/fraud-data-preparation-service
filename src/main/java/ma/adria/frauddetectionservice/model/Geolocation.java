@@ -4,15 +4,22 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @Entity
 @Table(name = "geolocation")
-public class Geolocation extends BaseEntity{
+public class Geolocation extends BaseEntity {
     private float longitude;
     private float latitude;
+
+    @Builder
+    public Geolocation(Long id, LocalDateTime createdAt, LocalDateTime updatedAt, float longitude, float latitude) {
+        super(id, createdAt, updatedAt);
+        this.longitude = longitude;
+        this.latitude = latitude;
+    }
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
+// for test purpose remove it when you're done
 public class KafkaMessageController {
 
     private final KafkaTemplate<String, String> kafkaTemplate;

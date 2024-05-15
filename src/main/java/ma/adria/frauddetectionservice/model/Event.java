@@ -1,36 +1,54 @@
 package ma.adria.frauddetectionservice.model;
 
-
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import jakarta.persistence.*;
 import lombok.*;
-import ma.adria.frauddetectionservice.deserializer.LocalDateTimeDeserializer;
-import ma.adria.frauddetectionservice.dto.ContratDto;
-import ma.adria.frauddetectionservice.dto.DeviceDto;
-import ma.adria.frauddetectionservice.dto.LocationDto;
 import ma.adria.frauddetectionservice.enums.Canal;
-import ma.adria.frauddetectionservice.enums.ClientSegment;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
+@NoArgsConstructor
 @MappedSuperclass
-public abstract class Event extends BaseEntity{
-    private LocalDateTime timestamp ;
+public class Event extends BaseEntity {
+    private String reference;
+    private LocalDateTime timestamp;
+
+    @Enumerated(EnumType.STRING)
     private Canal canal;
     private LocalDateTime activityTime;
     private String username;
     private String bankCode;
     private String countryCode;
-    @Enumerated(EnumType.STRING)
-    private ClientSegment segment;
+
+    private String segment;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Location location;
-    @ManyToOne(cascade = CascadeType.ALL)
+
+    @ManyToOne
     private Contrat contrat;
-    @OneToOne(cascade = CascadeType.ALL)
+
+    @ManyToOne
     private Device device;
+
     private String motif;
+
+    @Builder
+    public Event(Long id, LocalDateTime createdAt, LocalDateTime updatedAt, String reference, LocalDateTime timestamp, Canal canal, LocalDateTime activityTime, String username, String bankCode, String countryCode, String segment, Location location, Contrat contrat, Device device, String motif) {
+        super(id, createdAt, updatedAt);
+        this.reference = reference;
+        this.timestamp = timestamp;
+        this.canal = canal;
+        this.activityTime = activityTime;
+        this.username = username;
+        this.bankCode = bankCode;
+        this.countryCode = countryCode;
+        this.segment = segment;
+        this.location = location;
+        this.contrat = contrat;
+        this.device = device;
+        this.motif = motif;
+    }
 }

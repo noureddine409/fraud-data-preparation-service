@@ -2,19 +2,23 @@ package ma.adria.frauddetectionservice.dto;
 
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import ma.adria.frauddetectionservice.deserializer.LocalDateTimeDeserializer;
 import ma.adria.frauddetectionservice.enums.Canal;
 
 import java.time.LocalDateTime;
 
-@Data
-@NoArgsConstructor
-public class EventDto {
-    private String id;
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+public abstract class EventDto {
+    private String reference;
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    private LocalDateTime timestamp ;
+    private LocalDateTime timestamp;
     private Canal canal;
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime activityTime;

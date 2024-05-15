@@ -1,15 +1,17 @@
 package ma.adria.frauddetectionservice.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class DeviceDto {
-    private String deviceId;
+    private String fingerprint;
     private String deviceType;
-
-    private String macAddress;
     private String browser;
     private String browserVersion;
     private String os;
