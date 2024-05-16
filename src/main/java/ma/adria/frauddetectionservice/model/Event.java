@@ -2,7 +2,6 @@ package ma.adria.frauddetectionservice.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import ma.adria.frauddetectionservice.enums.Canal;
 
 import java.time.LocalDateTime;
 
@@ -50,5 +49,11 @@ public class Event extends BaseEntity {
         this.contrat = contrat;
         this.device = device;
         this.motif = motif;
+    }
+
+    public enum Canal {
+        WEB,
+        MOBILE,
+        OTHER
     }
 }

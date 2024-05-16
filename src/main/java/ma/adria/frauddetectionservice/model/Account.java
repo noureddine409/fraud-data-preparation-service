@@ -6,13 +6,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import ma.adria.frauddetectionservice.model.Event;
+import ma.adria.frauddetectionservice.model.BaseEntity;
 
 @Getter
 @Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
 @Entity
-@Table(name = "authentication_event")
-public class AuthenticationEvent extends Event {
+@Table(name = "account")
+public class Account extends BaseEntity {
+    private String accountNumber;
+    private String accountHolder;
 }
