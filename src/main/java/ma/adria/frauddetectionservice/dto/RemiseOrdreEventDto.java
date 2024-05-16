@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString(callSuper = true)
-
 public class RemiseOrdreEventDto extends EventDto {
     private String natureRemise;
     private String FormatRemiseOrdre;
