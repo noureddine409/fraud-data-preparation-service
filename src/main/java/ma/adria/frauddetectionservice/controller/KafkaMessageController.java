@@ -22,6 +22,8 @@ public class KafkaMessageController {
     public String publishEvent(@RequestBody String jsonMessage) {
         try {
             kafkaTemplate.send("t.events.auth", jsonMessage);
+            kafkaTemplate.send("t.events.ro", jsonMessage);
+
             log.info("Published event to Kafka topic: {}", jsonMessage);
             return "Event published successfully to Kafka topic.";
         } catch (Exception e) {
@@ -29,4 +31,6 @@ public class KafkaMessageController {
             return "Failed to publish event to Kafka topic.";
         }
     }
+
+
 }

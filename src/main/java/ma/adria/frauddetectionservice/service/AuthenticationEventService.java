@@ -2,6 +2,6 @@ package ma.adria.frauddetectionservice.service;
 
 import ma.adria.frauddetectionservice.model.AuthenticationEvent;
 
-public interface AuthenticationEventService {
-    AuthenticationEvent save(final AuthenticationEvent authenticationEvent);
+
+public interface AuthenticationEventService extends EventGenericService<AuthenticationEvent> {
 }

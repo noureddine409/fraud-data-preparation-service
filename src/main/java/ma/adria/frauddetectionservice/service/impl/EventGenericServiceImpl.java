@@ -2,13 +2,13 @@ package ma.adria.frauddetectionservice.service.impl;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import ma.adria.frauddetectionservice.model.AuthenticationEvent;
 import ma.adria.frauddetectionservice.model.Contrat;
 import ma.adria.frauddetectionservice.model.Device;
-import ma.adria.frauddetectionservice.repository.AuthenticationEventRepository;
+import ma.adria.frauddetectionservice.model.Event;
 import ma.adria.frauddetectionservice.repository.ContratRepository;
 import ma.adria.frauddetectionservice.repository.DeviceRepository;
-import ma.adria.frauddetectionservice.service.AuthenticationEventService;
+import ma.adria.frauddetectionservice.repository.GenericRepository;
+import ma.adria.frauddetectionservice.service.EventGenericService;
 import ma.adria.frauddetectionservice.utils.MapHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,24 +18,28 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 @Slf4j
-public class AuthenticationEventServiceImpl implements AuthenticationEventService {
+public class EventGenericServiceImpl <T extends Event> implements EventGenericService<T> {
 
     private final DeviceRepository deviceRepository;
     private final ContratRepository contratRepository;
-    private final AuthenticationEventRepository authenticationEventRepository;
+
+    private final GenericRepository<T> genericRepository;
+
     private final MapHelper mapHelper;
 
     @Override
     @Transactional
-    public AuthenticationEvent save(AuthenticationEvent authenticationEvent) {
-        log.info("Saving AuthenticationEvent: {}", authenticationEvent);
-
-        authenticationEvent.setDevice(handleDevice(authenticationEvent.getDevice()));
-        authenticationEvent.setContrat(handleContrat(authenticationEvent.getContrat()));
-
-        AuthenticationEvent savedEvent = authenticationEventRepository.save(authenticationEvent);
-        log.info("AuthenticationEvent saved: {}", savedEvent);
+    public T save(T event) {
+        log.info("saving event {}", event);
+        prepareEvent(event);
+        T savedEvent = genericRepository.save(event);
+        log.info("saved event {}", savedEvent);
         return savedEvent;
+    }
+
+    protected void prepareEvent(T event) {
+        event.setDevice(handleDevice(event.getDevice()));
+        event.setContrat(handleContrat(event.getContrat()));
     }
 
     private Contrat handleContrat(Contrat contrat) {
