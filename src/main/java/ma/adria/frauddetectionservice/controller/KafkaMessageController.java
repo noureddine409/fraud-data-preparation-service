@@ -29,4 +29,6 @@ public class KafkaMessageController {
             return "Failed to publish event to Kafka topic.";
         }
     }
+
+
 }

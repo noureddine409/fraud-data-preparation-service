@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.*;
 import ma.adria.frauddetectionservice.deserializer.LocalDateTimeDeserializer;
-import ma.adria.frauddetectionservice.enums.Canal;
+import ma.adria.frauddetectionservice.model.Event;
 
 import java.time.LocalDateTime;
 
@@ -29,7 +29,7 @@ public abstract class EventDto {
     private String reference;
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime timestamp;
-    private Canal canal;
+    private Event.Canal canal;
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime activityTime;
     private String username;

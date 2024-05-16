@@ -17,6 +17,7 @@ public class KafkaMessageListener {
     private final ObjectMapper objectMapper;
     private final EventDispatcher eventDispatcher;
 
+
     @KafkaListener(topics = "t.events", groupId = "my-group")
     public void consumeEvent(String message) {
         log.info("Received Kafka message: {}", message);
@@ -28,4 +29,6 @@ public class KafkaMessageListener {
             log.debug("trace: {}", (Object[]) e.getStackTrace());
         }
     }
+
+
 }
