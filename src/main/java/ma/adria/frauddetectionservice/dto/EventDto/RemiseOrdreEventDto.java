@@ -6,13 +6,12 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import ma.adria.frauddetectionservice.Event.RemiseOrdreEvent;
 import ma.adria.frauddetectionservice.dto.AccountDto;
 import ma.adria.frauddetectionservice.dto.ContratDto;
 import ma.adria.frauddetectionservice.dto.DeviceDto;
-import ma.adria.frauddetectionservice.dto.EventDto.EventDto;
 import ma.adria.frauddetectionservice.dto.LocationDto;
 import ma.adria.frauddetectionservice.model.Event;
-import ma.adria.frauddetectionservice.Event.RemiseOrdreEvent;
 
 import java.time.LocalDateTime;
 
@@ -25,7 +24,6 @@ public class RemiseOrdreEventDto extends EventDto {
     private String donneurOrdre;
     private AccountDto compteDebit;
     private String fichier;
-    @Enumerated(EnumType.STRING)
     private RemiseOrdreEvent.AjouterRemiseStatus status;
 
     @Builder

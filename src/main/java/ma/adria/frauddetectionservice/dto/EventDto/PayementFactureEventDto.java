@@ -10,7 +10,6 @@ import ma.adria.frauddetectionservice.Event.PayementFactureEvent;
 import ma.adria.frauddetectionservice.dto.AccountDto;
 import ma.adria.frauddetectionservice.dto.ContratDto;
 import ma.adria.frauddetectionservice.dto.DeviceDto;
-import ma.adria.frauddetectionservice.dto.EventDto.EventDto;
 import ma.adria.frauddetectionservice.dto.LocationDto;
 import ma.adria.frauddetectionservice.model.Event;
 
@@ -27,7 +26,6 @@ public class PayementFactureEventDto extends EventDto {
     private LocalDateTime dateCreation;
     private LocalDateTime dateEnvoie;
     private String amount;
-    @Enumerated(EnumType.STRING)
     private PayementFactureEvent.StatusPayementFactureEvent statusPayementFactureEvent;
 
     @Builder

@@ -3,10 +3,10 @@ package ma.adria.frauddetectionservice.handler.impl;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import ma.adria.frauddetectionservice.Event.RemiseOrdreEvent;
 import ma.adria.frauddetectionservice.dto.EventDto.EventDto;
 import ma.adria.frauddetectionservice.dto.EventDto.RemiseOrdreEventDto;
 import ma.adria.frauddetectionservice.handler.EventHandler;
-import ma.adria.frauddetectionservice.Event.RemiseOrdreEvent;
 import ma.adria.frauddetectionservice.service.RemiseOrdreEventService;
 import ma.adria.frauddetectionservice.utils.MapHelper;
 import org.springframework.stereotype.Component;
