@@ -2,10 +2,10 @@ package ma.adria.frauddetectionservice.handler.impl;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import ma.adria.frauddetectionservice.dto.AuthenticationEventDto;
-import ma.adria.frauddetectionservice.dto.EventDto;
+import ma.adria.frauddetectionservice.Event.AuthenticationEvent;
+import ma.adria.frauddetectionservice.dto.EventDto.AuthenticationEventDto;
+import ma.adria.frauddetectionservice.dto.EventDto.EventDto;
 import ma.adria.frauddetectionservice.handler.EventHandler;
-import ma.adria.frauddetectionservice.model.AuthenticationEvent;
 import ma.adria.frauddetectionservice.service.AuthenticationEventService;
 import ma.adria.frauddetectionservice.utils.MapHelper;
 import org.springframework.stereotype.Component;
@@ -15,8 +15,6 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @Slf4j
 public class AuthenticationEventHandler implements EventHandler {
-
-
     private final MapHelper mapHelper;
 
     private final AuthenticationEventService authenticationEventService;

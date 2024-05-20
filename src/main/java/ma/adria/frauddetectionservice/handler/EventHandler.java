@@ -1,6 +1,6 @@
 package ma.adria.frauddetectionservice.handler;
 
-import ma.adria.frauddetectionservice.dto.EventDto;
+import ma.adria.frauddetectionservice.dto.EventDto.EventDto;
 
 public interface EventHandler {
 
