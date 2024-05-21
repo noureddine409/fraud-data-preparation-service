@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "payementFacture_event")
 public class PayementFactureEvent extends Event {
-
     private String creancier;
     private String creance;
     private String intituleClient;
@@ -30,7 +29,6 @@ public class PayementFactureEvent extends Event {
     private StatusPayementFactureEvent statusPayementFactureEvent;
     @OneToOne(cascade = CascadeType.ALL)
     private Account compteDebit;
-
     public enum StatusPayementFactureEvent {
         SUCCES, FAILED
 

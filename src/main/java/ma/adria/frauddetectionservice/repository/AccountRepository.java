@@ -5,6 +5,6 @@ import ma.adria.frauddetectionservice.model.Account;
 import java.util.Optional;
 
 public interface AccountRepository extends GenericRepository<Account> {
-    Optional<Account> findByAccountNumber(String contratID);
+    Optional<Account> findByAccountNumber(String accountNumber);
 
 }
