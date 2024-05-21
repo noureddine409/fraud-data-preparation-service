@@ -3,7 +3,7 @@ package ma.adria.frauddetectionservice.handler.impl;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import ma.adria.frauddetectionservice.Event.AuthenticationEvent;
-import ma.adria.frauddetectionservice.dto.EventDto.AuthenticationEventDto;
+import ma.adria.frauddetectionservice.dto.EventDto.EventDto.AuthenticationEventDto;
 import ma.adria.frauddetectionservice.dto.EventDto.EventDto;
 import ma.adria.frauddetectionservice.handler.EventHandler;
 import ma.adria.frauddetectionservice.service.AuthenticationEventService;

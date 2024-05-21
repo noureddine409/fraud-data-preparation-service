@@ -6,7 +6,6 @@ import lombok.Setter;
 import lombok.ToString;
 import ma.adria.frauddetectionservice.dto.ContratDto;
 import ma.adria.frauddetectionservice.dto.DeviceDto;
-import ma.adria.frauddetectionservice.dto.EventDto.EventDto;
 import ma.adria.frauddetectionservice.dto.LocationDto;
 import ma.adria.frauddetectionservice.model.Event;
 
