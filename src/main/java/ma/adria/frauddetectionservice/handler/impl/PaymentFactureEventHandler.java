@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import ma.adria.frauddetectionservice.Event.PayementFactureEvent;
 import ma.adria.frauddetectionservice.dto.EventDto.EventDto;
-import ma.adria.frauddetectionservice.dto.EventDto.PayementFactureEventDto;
+import ma.adria.frauddetectionservice.dto.EventDto.EventDto.PayementFactureEventDto;
 import ma.adria.frauddetectionservice.handler.EventHandler;
 import ma.adria.frauddetectionservice.service.PayementFactureEventService;
 import ma.adria.frauddetectionservice.utils.MapHelper;

@@ -4,10 +4,7 @@ package ma.adria.frauddetectionservice.dispatcher;
 import lombok.extern.slf4j.Slf4j;
 import ma.adria.frauddetectionservice.dto.EventDto.*;
 import ma.adria.frauddetectionservice.handler.EventHandler;
-import ma.adria.frauddetectionservice.handler.impl.AuthenticationEventHandler;
-import ma.adria.frauddetectionservice.handler.impl.CarteTransactionEventHandler;
-import ma.adria.frauddetectionservice.handler.impl.PaymentFactureEventHandler;
-import ma.adria.frauddetectionservice.handler.impl.RemiseOrdreEventHandler;
+import ma.adria.frauddetectionservice.handler.impl.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 

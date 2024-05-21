@@ -19,7 +19,12 @@ import java.time.LocalDateTime;
         @JsonSubTypes.Type(value = AuthenticationEventDto.class, name = "AUTHENTICATION"),
         @JsonSubTypes.Type(value = RemiseOrdreEventDto.class, name = "REMISE_ORDRE"),
         @JsonSubTypes.Type(value = PayementFactureEventDto.class, name = "PAYEMENT_FACTURE"),
-        @JsonSubTypes.Type(value = CarteTransactionEventDto.class, name = "CARTE_TRANSACTION")
+        @JsonSubTypes.Type(value = CarteTransactionEventDto.class, name = "CARTE_TRANSACTION"),
+        @JsonSubTypes.Type(value = BeneficiaryInfoEventDto.class, name = "BENEFICIARY_INFO")
+        //@JsonSubTypes.Type(value = ChangeInfoEventDto.class, name = "CHANGE_INFO")
+
+
+
 
 
 })
