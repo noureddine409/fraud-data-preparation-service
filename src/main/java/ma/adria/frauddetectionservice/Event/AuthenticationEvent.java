@@ -1,4 +1,4 @@
-package ma.adria.frauddetectionservice.model;
+package ma.adria.frauddetectionservice.Event;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

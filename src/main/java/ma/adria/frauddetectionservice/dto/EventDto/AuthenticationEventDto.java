@@ -1,9 +1,13 @@
-package ma.adria.frauddetectionservice.dto;
+package ma.adria.frauddetectionservice.dto.EventDto;
 
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import ma.adria.frauddetectionservice.dto.ContratDto;
+import ma.adria.frauddetectionservice.dto.DeviceDto;
+import ma.adria.frauddetectionservice.dto.EventDto.EventDto;
+import ma.adria.frauddetectionservice.dto.LocationDto;
 import ma.adria.frauddetectionservice.model.Event;
 
 import java.time.LocalDateTime;

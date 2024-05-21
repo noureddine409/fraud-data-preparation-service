@@ -1,10 +1,12 @@
-package ma.adria.frauddetectionservice.model;
+package ma.adria.frauddetectionservice.Event;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import ma.adria.frauddetectionservice.model.Account;
+import ma.adria.frauddetectionservice.model.Event;
 
 
 @Getter

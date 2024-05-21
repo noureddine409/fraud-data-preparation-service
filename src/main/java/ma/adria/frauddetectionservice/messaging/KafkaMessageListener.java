@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import ma.adria.frauddetectionservice.dispatcher.EventDispatcher;
-import ma.adria.frauddetectionservice.dto.EventDto;
+import ma.adria.frauddetectionservice.dto.EventDto.EventDto;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
