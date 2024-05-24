@@ -25,6 +25,9 @@ public class EventDispatcher {
         eventHandlers.put(RemiseOrdreEventDto.class, applicationContext.getBean(RemiseOrdreEventHandler.class));
         eventHandlers.put(PayementFactureEventDto.class, applicationContext.getBean(PaymentFactureEventHandler.class));
         eventHandlers.put(CarteTransactionEventDto.class, applicationContext.getBean(CarteTransactionEventHandler.class));
+        eventHandlers.put(AccountToAccountVirementEventDto.class, applicationContext.getBean(AccountToAccountVirementEventHandler.class));
+        eventHandlers.put(ToBeneficiaryVirementEventDto.class, applicationContext.getBean(ToBeneficiaryVirementEventHandler.class));
+        eventHandlers.put(MutipleVirementEventDto.class, applicationContext.getBean(MutipleVirementEventHandler.class));
 
 
     }

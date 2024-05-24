@@ -2,9 +2,11 @@ package ma.adria.frauddetectionservice.service.impl;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import ma.adria.frauddetectionservice.model.Account;
 import ma.adria.frauddetectionservice.model.Contrat;
 import ma.adria.frauddetectionservice.model.Device;
 import ma.adria.frauddetectionservice.model.Event;
+import ma.adria.frauddetectionservice.repository.AccountRepository;
 import ma.adria.frauddetectionservice.repository.ContratRepository;
 import ma.adria.frauddetectionservice.repository.DeviceRepository;
 import ma.adria.frauddetectionservice.repository.GenericRepository;
@@ -22,6 +24,8 @@ public class EventGenericServiceImpl <T extends Event> implements EventGenericSe
 
     private final DeviceRepository deviceRepository;
     private final ContratRepository contratRepository;
+
+    private final AccountRepository accountRepository;
 
     private final GenericRepository<T> genericRepository;
 
@@ -62,7 +66,7 @@ public class EventGenericServiceImpl <T extends Event> implements EventGenericSe
         }
     }
 
-    private Device handleDevice(Device device) {
+    protected Device handleDevice(Device device) {
         if (device == null) {
             return null;
         }
@@ -79,6 +83,23 @@ public class EventGenericServiceImpl <T extends Event> implements EventGenericSe
             Device savedDevice = deviceRepository.save(device);
             log.info("New Device saved: {}", savedDevice);
             return savedDevice;
+        }
+    }
+
+    protected Account handleAccount(Account account) {
+        if (account == null) {
+            return null;
+        }
+
+        Optional<Account> existingAccount = accountRepository.findByAccountNumber(account.getAccountNumber());
+        if (existingAccount.isPresent()) {
+            log.info("Found existing Account with account number: {}", account.getAccountNumber());
+            return existingAccount.get();
+        } else {
+            log.info("Saving new Account: {}", account);
+            Account savedAccount = accountRepository.save(account);
+            log.info("New Account saved: {}", savedAccount);
+            return savedAccount;
         }
     }
 }
