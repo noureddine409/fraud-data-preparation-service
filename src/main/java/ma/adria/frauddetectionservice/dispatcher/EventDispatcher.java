@@ -2,6 +2,7 @@ package ma.adria.frauddetectionservice.dispatcher;
 
 
 import lombok.extern.slf4j.Slf4j;
+import ma.adria.frauddetectionservice.Event.DemandeChequierEvent;
 import ma.adria.frauddetectionservice.dto.EventDto.*;
 import ma.adria.frauddetectionservice.handler.EventHandler;
 import ma.adria.frauddetectionservice.handler.impl.*;
@@ -28,6 +29,7 @@ public class EventDispatcher {
         eventHandlers.put(AccountToAccountVirementEventDto.class, applicationContext.getBean(AccountToAccountVirementEventHandler.class));
         eventHandlers.put(ToBeneficiaryVirementEventDto.class, applicationContext.getBean(ToBeneficiaryVirementEventHandler.class));
         eventHandlers.put(MutipleVirementEventDto.class, applicationContext.getBean(MutipleVirementEventHandler.class));
+        eventHandlers.put(DemandeChequierEventDto.class, applicationContext.getBean(DemandeChequierEventHandler.class));
 
 
     }
