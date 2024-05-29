@@ -30,6 +30,8 @@ public class EventDispatcher {
         eventHandlers.put(MutipleVirementEventDto.class, applicationContext.getBean(MutipleVirementEventHandler.class));
         eventHandlers.put(DemandeChequierEventDto.class, applicationContext.getBean(DemandeChequierEventHandler.class));
         eventHandlers.put(DemandeLcnEventDto.class, applicationContext.getBean(DemandeLcnEventHandler.class));
+        eventHandlers.put(DemandeRecalculCodePinEventDto.class, applicationContext.getBean(DemandeRecalculCodePinEventHandler.class));
+
 
 
     }
