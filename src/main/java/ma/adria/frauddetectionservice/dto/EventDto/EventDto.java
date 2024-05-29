@@ -24,12 +24,8 @@ import java.time.LocalDateTime;
         @JsonSubTypes.Type(value = AccountToAccountVirementEventDto.class, name = "ACCOUNTOACCOUNT_VIREMENT"),
         @JsonSubTypes.Type(value = ToBeneficiaryVirementEventDto.class, name = "TOBENEFICIARY_VIREMENT"),
         @JsonSubTypes.Type(value = MutipleVirementEventDto.class, name = "MULTIPLE_VIREMENT"),
-        @JsonSubTypes.Type(value = DemandeChequierEventDto.class, name = "DEMANDE_CHEQUIER")
-
-
-
-
-
+        @JsonSubTypes.Type(value = DemandeChequierEventDto.class, name = "DEMANDE_CHEQUIER"),
+        @JsonSubTypes.Type(value = DemandeLcnEventDto.class, name = "DEMANDE_LCN")
 
 
 
