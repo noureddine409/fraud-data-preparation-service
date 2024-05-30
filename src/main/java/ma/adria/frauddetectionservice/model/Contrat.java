@@ -15,11 +15,11 @@ import java.time.LocalDateTime;
 @Table(name = "contrat")
 public class Contrat extends BaseEntity {
     @Column(unique = true, nullable = false)
-    private String contratID;
+    private String contratId;
 
     @Builder
     public Contrat(Long id, LocalDateTime createdAt, LocalDateTime updatedAt, String contratID) {
         super(id, createdAt, updatedAt);
-        this.contratID = contratID;
+        this.contratId = contratID;
     }
 }

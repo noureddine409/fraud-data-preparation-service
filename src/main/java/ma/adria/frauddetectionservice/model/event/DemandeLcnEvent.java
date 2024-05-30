@@ -21,15 +21,15 @@ import java.time.LocalDateTime;
 @Table(name = "DemandeLcn_event")
 
 public class DemandeLcnEvent extends Event {
-    private int nombreLCN;
+    private int nombreLcn;
     @OneToOne(cascade = CascadeType.ALL)
     private Account account;
-    private String typeLCN;
+    private String typeLcn;
     private String devise;
     private LocalDateTime dateEnvoie;
     private DemandeLcnStatus status;
 
-    public enum DemandeLcnStatus{
+    public enum DemandeLcnStatus {
         SUCCES, FAILED
     }
 

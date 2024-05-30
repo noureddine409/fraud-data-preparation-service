@@ -12,9 +12,9 @@ import java.time.LocalDateTime;
 @Setter
 @ToString(callSuper = true)
 public class DemandeLcnEventDto extends EventDto{
-    private int nombreLCN;
+    private int nombreLcn;
     private AccountDto account;
-    private String typeLCN;
+    private String typeLcn;
     private String devise;
     private LocalDateTime dateEnvoie;
     private DemandeLcnEvent.DemandeLcnStatus status;
