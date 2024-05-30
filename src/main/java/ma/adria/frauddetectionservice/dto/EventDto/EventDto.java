@@ -28,7 +28,9 @@ import java.time.LocalDateTime;
         @JsonSubTypes.Type(value = DemandeLcnEventDto.class, name = "DEMANDE_LCN"),
         @JsonSubTypes.Type(value = DemandeRecalculCodePinEventDto.class, name = "DEMANDE_RECALCUL_CODE_PIN"),
         @JsonSubTypes.Type(value = DemandeOppositionCarteEventDto.class, name = "DEMANDE_OPPOSITION_CARTE"),
-        @JsonSubTypes.Type(value = RechargeCarteEventDto.class, name = "RECHARGE_CARTE")
+        @JsonSubTypes.Type(value = RechargeCarteEventDto.class, name = "RECHARGE_CARTE"),
+        @JsonSubTypes.Type(value = DemandeOppositionChequeEventDto.class, name = "DEMANDE_OPPOSITION_CHEQUE"),
+
 
 
 
