@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ContratDto {
-    private String contratID;
+    private String contratId;
 }
