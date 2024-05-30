@@ -1,15 +1,10 @@
 package ma.adria.frauddetectionservice.dto.EventDto;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import ma.adria.frauddetectionservice.Event.DemandeChequierEvent;
+import ma.adria.frauddetectionservice.model.event.DemandeChequierEvent;
 import ma.adria.frauddetectionservice.dto.AccountDto;
-import ma.adria.frauddetectionservice.model.Account;
 
 import java.time.LocalDateTime;
 

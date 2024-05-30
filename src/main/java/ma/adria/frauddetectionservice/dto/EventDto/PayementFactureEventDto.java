@@ -4,7 +4,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import ma.adria.frauddetectionservice.Event.PayementFactureEvent;
+import ma.adria.frauddetectionservice.model.event.PayementFactureEvent;
 import ma.adria.frauddetectionservice.dto.*;
 import ma.adria.frauddetectionservice.model.Event;
 

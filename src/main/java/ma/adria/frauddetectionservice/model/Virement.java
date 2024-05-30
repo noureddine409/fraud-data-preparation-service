@@ -1,7 +1,10 @@
 package ma.adria.frauddetectionservice.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 
@@ -9,10 +12,11 @@ import java.time.LocalDateTime;
 @Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
-@MappedSuperclass
-public class Virement extends Event{
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Virement extends Event {
     @Enumerated(EnumType.STRING)
-    private ExecutionDateType type; //oneTomany
+    private ExecutionDateType type;
     private String curency;//devise
     @OneToOne(cascade = CascadeType.ALL)
     private ExecutionFrequency executionFrequency;
@@ -25,7 +29,7 @@ public class Virement extends Event{
         this.executionFrequency = executionFrequency;
     }
 
-    public enum ExecutionDateType{
+    public enum ExecutionDateType {
         Immediate, Deferred, Permanent
     }
 }

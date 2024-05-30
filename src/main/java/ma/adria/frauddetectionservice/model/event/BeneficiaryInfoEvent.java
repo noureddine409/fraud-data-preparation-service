@@ -1,4 +1,4 @@
-package ma.adria.frauddetectionservice.Event;
+package ma.adria.frauddetectionservice.model.event;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;

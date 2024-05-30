@@ -1,6 +1,9 @@
-package ma.adria.frauddetectionservice.Event;
+package ma.adria.frauddetectionservice.model.event;
 
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,18 +18,18 @@ import java.time.LocalDateTime;
 @ToString(callSuper = true)
 @NoArgsConstructor
 @Entity
-@Table(name = "demandeChequier_event")
+@Table(name = "DemandeLcn_event")
 
-public class DemandeChequierEvent extends Event {
+public class DemandeLcnEvent extends Event {
+    private int nombreLCN;
     @OneToOne(cascade = CascadeType.ALL)
     private Account account;
-    private int nombreCheqquier;
-    private String typeChequier;
+    private String typeLCN;
     private String devise;
     private LocalDateTime dateEnvoie;
-    @Enumerated(EnumType.STRING)
-    private DemandeChequierStatus demandeChequierStatus;
-    public enum DemandeChequierStatus{
+    private DemandeLcnStatus status;
+
+    public enum DemandeLcnStatus{
         SUCCES, FAILED
     }
 

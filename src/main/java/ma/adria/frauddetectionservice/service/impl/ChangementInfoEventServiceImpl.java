@@ -1,6 +1,6 @@
 package ma.adria.frauddetectionservice.service.impl;
 
-import ma.adria.frauddetectionservice.Event.ChangeInfoEvent;
+import ma.adria.frauddetectionservice.model.event.ChangeInfoEvent;
 import ma.adria.frauddetectionservice.repository.AccountRepository;
 import ma.adria.frauddetectionservice.repository.ContratRepository;
 import ma.adria.frauddetectionservice.repository.DeviceRepository;

@@ -2,7 +2,7 @@ package ma.adria.frauddetectionservice.handler.impl;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import ma.adria.frauddetectionservice.Event.AccountToAccountVirementEvent;
+import ma.adria.frauddetectionservice.model.event.AccountToAccountVirementEvent;
 import ma.adria.frauddetectionservice.dto.EventDto.AccountToAccountVirementEventDto;
 import ma.adria.frauddetectionservice.dto.EventDto.EventDto;
 import ma.adria.frauddetectionservice.handler.EventHandler;
