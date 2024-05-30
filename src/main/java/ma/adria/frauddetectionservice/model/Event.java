@@ -9,7 +9,8 @@ import java.time.LocalDateTime;
 @Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Event extends BaseEntity {
     private String reference;
     private LocalDateTime timestamp;
@@ -33,6 +34,7 @@ public class Event extends BaseEntity {
     private Device device;
 
     private String motif;
+
     @Builder
     public Event(Long id, LocalDateTime createdAt, LocalDateTime updatedAt, String reference, LocalDateTime timestamp, Canal canal, LocalDateTime activityTime, String username, String bankCode, String countryCode, String segment, Location location, Contrat contrat, Device device, String motif) {
         super(id, createdAt, updatedAt);
