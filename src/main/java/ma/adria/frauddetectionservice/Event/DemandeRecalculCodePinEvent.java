@@ -7,27 +7,29 @@ import lombok.Setter;
 import lombok.ToString;
 import ma.adria.frauddetectionservice.model.Account;
 import ma.adria.frauddetectionservice.model.Event;
-
-import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
 @Entity
-@Table(name = "demandeChequier_event")
-
-public class DemandeChequierEvent extends Event {
+@Table(name = "demandeRecalculCodePin_event")
+public class DemandeRecalculCodePinEvent extends Event {
     @OneToOne(cascade = CascadeType.ALL)
     private Account account;
-    private int nombreCheqquier;
-    private String typeChequier;
-    private String devise;
-    private LocalDateTime dateEnvoie;
+    private String motif;
+    private String carteId;
     @Enumerated(EnumType.STRING)
-    private DemandeChequierStatus demandeChequierStatus;
-    public enum DemandeChequierStatus{
+    private TransferMode modeEnvoie;
+    @Enumerated(EnumType.STRING)
+    private DemandeRecalculCodePinStatus status;
+
+    public enum DemandeRecalculCodePinStatus{
         SUCCES, FAILED
     }
+
+    public enum TransferMode {
+        SMS, EMAIL
+    }
+
 
 }
