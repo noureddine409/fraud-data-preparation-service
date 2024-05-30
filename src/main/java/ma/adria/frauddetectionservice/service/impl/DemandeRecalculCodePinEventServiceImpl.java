@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class DemandeRecalculCodePinImpl extends EventGenericServiceImpl<DemandeRecalculCodePinEvent> implements DemandeRecalculCodePinEventService {
-    public DemandeRecalculCodePinImpl(DeviceRepository deviceRepository, ContratRepository contratRepository, AccountRepository accountRepository, GenericRepository<DemandeRecalculCodePinEvent> genericRepository, MapHelper mapHelper) {
+public class DemandeRecalculCodePinEventServiceImpl extends EventGenericServiceImpl<DemandeRecalculCodePinEvent> implements DemandeRecalculCodePinEventService {
+    public DemandeRecalculCodePinEventServiceImpl(DeviceRepository deviceRepository, ContratRepository contratRepository, AccountRepository accountRepository, GenericRepository<DemandeRecalculCodePinEvent> genericRepository, MapHelper mapHelper) {
         super(deviceRepository, contratRepository, accountRepository, genericRepository, mapHelper);
     }
 

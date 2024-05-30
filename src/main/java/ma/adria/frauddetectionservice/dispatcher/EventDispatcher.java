@@ -31,6 +31,8 @@ public class EventDispatcher {
         eventHandlers.put(DemandeChequierEventDto.class, applicationContext.getBean(DemandeChequierEventHandler.class));
         eventHandlers.put(DemandeLcnEventDto.class, applicationContext.getBean(DemandeLcnEventHandler.class));
         eventHandlers.put(DemandeRecalculCodePinEventDto.class, applicationContext.getBean(DemandeRecalculCodePinEventHandler.class));
+        eventHandlers.put(DemandeOppositionCarteEventDto.class, applicationContext.getBean(DemandeOppositionCarteEventHandler.class));
+
 
 
 
