@@ -4,13 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ma.adria.frauddetectionservice.model.Creditor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class CreditorDto {
-    private Creditor creditor;
-
+    private AccountDto account;
+    private String amount;
 }
