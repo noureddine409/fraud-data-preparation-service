@@ -2,7 +2,7 @@ package ma.adria.frauddetectionservice.handler.impl;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import ma.adria.frauddetectionservice.Event.RechargeCarteEvent;
+import ma.adria.frauddetectionservice.model.event.RechargeCarteEvent;
 import ma.adria.frauddetectionservice.dto.EventDto.EventDto;
 import ma.adria.frauddetectionservice.dto.EventDto.RechargeCarteEventDto;
 import ma.adria.frauddetectionservice.handler.EventHandler;

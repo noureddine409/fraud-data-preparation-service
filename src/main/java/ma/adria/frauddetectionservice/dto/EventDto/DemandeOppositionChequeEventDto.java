@@ -3,9 +3,8 @@ package ma.adria.frauddetectionservice.dto.EventDto;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import ma.adria.frauddetectionservice.Event.DemandeOppositionChequeEvent;
+import ma.adria.frauddetectionservice.model.event.DemandeOppositionChequeEvent;
 import ma.adria.frauddetectionservice.dto.AccountDto;
-import ma.adria.frauddetectionservice.model.Account;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

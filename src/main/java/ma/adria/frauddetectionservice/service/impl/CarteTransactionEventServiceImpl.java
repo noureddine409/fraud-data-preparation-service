@@ -1,7 +1,7 @@
 package ma.adria.frauddetectionservice.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
-import ma.adria.frauddetectionservice.Event.CarteTransactionEvent;
+import ma.adria.frauddetectionservice.model.event.CarteTransactionEvent;
 import ma.adria.frauddetectionservice.repository.AccountRepository;
 import ma.adria.frauddetectionservice.repository.ContratRepository;
 import ma.adria.frauddetectionservice.repository.DeviceRepository;
