@@ -1,10 +1,9 @@
-package ma.adria.frauddetectionservice.dto.EventDto;
+package ma.adria.frauddetectionservice.dto.events;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import ma.adria.frauddetectionservice.common.CoreConstants;
 import ma.adria.frauddetectionservice.dto.CreditorDto;
 
 import java.util.List;
@@ -15,5 +14,10 @@ import java.util.List;
 public class MutipleVirementEventDto extends EventDto{
     private int nombreOperations;
     private List<CreditorDto> creditors ;
+
+    @Override
+    public String getEventName() {
+        return CoreConstants.EventNames.MULTIPLE_VIREMENT;
+    }
 
 }
