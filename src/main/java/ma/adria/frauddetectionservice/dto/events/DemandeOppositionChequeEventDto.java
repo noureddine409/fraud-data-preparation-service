@@ -1,8 +1,9 @@
-package ma.adria.frauddetectionservice.dto.EventDto;
+package ma.adria.frauddetectionservice.dto.events;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import ma.adria.frauddetectionservice.common.CoreConstants;
 import ma.adria.frauddetectionservice.model.event.DemandeOppositionChequeEvent;
 import ma.adria.frauddetectionservice.dto.AccountDto;
 
@@ -25,5 +26,8 @@ public class DemandeOppositionChequeEventDto extends EventDto{
     private String statusCheque;
     private DemandeOppositionChequeEvent.DemandeOppositionChequeStatus status;
 
-
+    @Override
+    public String getEventName() {
+        return CoreConstants.EventNames.DEMANDE_OPPOSITION_CHEQUE;
+    }
 }

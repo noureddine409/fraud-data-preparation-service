@@ -1,4 +1,4 @@
-package ma.adria.frauddetectionservice.dto.EventDto;
+package ma.adria.frauddetectionservice.dto.events;
 
 import lombok.*;
 import ma.adria.frauddetectionservice.model.ExecutionFrequency;

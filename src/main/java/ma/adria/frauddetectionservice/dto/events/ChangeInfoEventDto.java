@@ -1,8 +1,9 @@
-package ma.adria.frauddetectionservice.dto.EventDto;
+package ma.adria.frauddetectionservice.dto.events;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import ma.adria.frauddetectionservice.common.CoreConstants;
 
 @Getter
 @Setter
@@ -14,4 +15,9 @@ public class ChangeInfoEventDto extends EventDto {
     private boolean contratChanged;
     private boolean passwordChanged;
     private boolean forgotPassword;
+
+    @Override
+    public String getEventName() {
+        return CoreConstants.EventNames.CHANGE_INFO;
+    }
 }
