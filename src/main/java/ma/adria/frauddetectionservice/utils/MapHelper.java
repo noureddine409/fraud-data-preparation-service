@@ -1,12 +1,12 @@
 package ma.adria.frauddetectionservice.utils;
 
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class MapHelper {
 
     private final ModelMapper modelMapper;

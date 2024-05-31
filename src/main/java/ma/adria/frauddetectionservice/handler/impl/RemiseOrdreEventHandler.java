@@ -1,19 +1,19 @@
 package ma.adria.frauddetectionservice.handler.impl;
 
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import ma.adria.frauddetectionservice.model.event.RemiseOrdreEvent;
 import ma.adria.frauddetectionservice.dto.events.EventDto;
 import ma.adria.frauddetectionservice.dto.events.RemiseOrdreEventDto;
 import ma.adria.frauddetectionservice.handler.EventHandler;
+import ma.adria.frauddetectionservice.model.event.RemiseOrdreEvent;
 import ma.adria.frauddetectionservice.service.RemiseOrdreEventService;
 import ma.adria.frauddetectionservice.utils.MapHelper;
 import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class RemiseOrdreEventHandler implements EventHandler {
 
     private final MapHelper mapHelper;

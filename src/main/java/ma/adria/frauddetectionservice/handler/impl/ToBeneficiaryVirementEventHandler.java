@@ -1,7 +1,7 @@
 package ma.adria.frauddetectionservice.handler.impl;
 
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import ma.adria.frauddetectionservice.dto.events.EventDto;
 import ma.adria.frauddetectionservice.dto.events.ToBeneficiaryVirementEventDto;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ToBeneficiaryVirementEventHandler implements EventHandler {
     private final MapHelper mapHelper;
 
