@@ -3,7 +3,7 @@ package ma.adria.frauddetectionservice.messaging;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import ma.adria.frauddetectionservice.dispatcher.EventDispatcher;
 import ma.adria.frauddetectionservice.dispatcher.EventHandlerNotFoundException;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class KafkaMessageListener {
 
     private final ObjectMapper objectMapper;
