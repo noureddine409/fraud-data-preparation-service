@@ -46,7 +46,7 @@ public class EventGenericServiceImpl <T extends Event> implements EventGenericSe
         event.setContrat(handleContrat(event.getContrat()));
     }
 
-    private Contrat handleContrat(Contrat contrat) {
+    protected Contrat handleContrat(Contrat contrat) {
         if (contrat == null) {
             return null;
         }
