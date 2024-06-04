@@ -4,6 +4,7 @@ package ma.adria.frauddetectionservice.dto.events;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import ma.adria.frauddetectionservice.dto.ContratDto;
 import ma.adria.frauddetectionservice.dto.DeviceDto;
 import ma.adria.frauddetectionservice.dto.LocationDto;
@@ -41,6 +42,7 @@ import static ma.adria.frauddetectionservice.common.CoreConstants.EventNames.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@SuperBuilder
 public abstract class EventDto {
 
     private Long id;

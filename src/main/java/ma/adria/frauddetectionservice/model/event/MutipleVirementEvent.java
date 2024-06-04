@@ -22,6 +22,7 @@ import java.util.List;
 public class MutipleVirementEvent extends Virement {
     private int nombreOperations;
     @OneToMany(cascade = CascadeType.ALL)
+    @ToString.Exclude
     private List<Creditor> creditors ;
 
 }

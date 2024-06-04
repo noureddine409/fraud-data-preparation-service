@@ -1,6 +1,7 @@
 package ma.adria.frauddetectionservice.dto.events;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import ma.adria.frauddetectionservice.model.ExecutionFrequency;
 import ma.adria.frauddetectionservice.model.Virement;
 
@@ -9,7 +10,8 @@ import ma.adria.frauddetectionservice.model.Virement;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class VirementDto {
+@SuperBuilder
+public abstract class VirementDto extends EventDto {
     private Virement.ExecutionDateType type;
     private String reason;
     private String curency;
