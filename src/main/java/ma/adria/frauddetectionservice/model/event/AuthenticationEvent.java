@@ -19,8 +19,4 @@ import java.time.LocalDateTime;
 @Table(name = "authentication_event")
 @SuperBuilder
 public class AuthenticationEvent extends Event {
-    @Builder(builderMethodName = "authentication_builder")
-    public AuthenticationEvent(Long id, LocalDateTime createdAt, LocalDateTime updatedAt, String reference, LocalDateTime timestamp, Canal canal, LocalDateTime activityTime, String username, String bankCode, String countryCode, String segment, Location location, Contrat contrat, Device device, String motif) {
-        super(id, createdAt, updatedAt, reference, timestamp, canal, activityTime, username, bankCode, countryCode, segment, location, contrat, device, motif);
-    }
 }

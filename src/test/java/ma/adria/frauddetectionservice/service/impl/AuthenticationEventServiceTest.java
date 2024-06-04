@@ -2,7 +2,6 @@ package ma.adria.frauddetectionservice.service.impl;
 
 import ma.adria.frauddetectionservice.model.*;
 import ma.adria.frauddetectionservice.model.event.AuthenticationEvent;
-import ma.adria.frauddetectionservice.repository.AccountRepository;
 import ma.adria.frauddetectionservice.repository.ContratRepository;
 import ma.adria.frauddetectionservice.repository.DeviceRepository;
 import ma.adria.frauddetectionservice.repository.GenericRepository;
@@ -16,7 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
@@ -26,9 +25,6 @@ class AuthenticationEventServiceTest {
 
     @Mock
     private ContratRepository contratRepository;
-
-    @Mock
-    private AccountRepository accountRepository;
 
     @Mock
     private GenericRepository<AuthenticationEvent> genericRepository;
@@ -68,7 +64,7 @@ class AuthenticationEventServiceTest {
                         .id(2L)
                         .createdAt(LocalDateTime.of(2024, 1, 1, 0, 0))
                         .updatedAt(LocalDateTime.of(2024, 1, 1, 0, 0))
-                        .contratID("contratID123")
+                        .contratId("contratID123")
                         .build())
                 .device(Device.builder()
                         .id(3L)
@@ -155,10 +151,10 @@ class AuthenticationEventServiceTest {
                 .id(1L)
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
-                .contratID("newContratID")
+                .contratId("newContratID")
                 .build();
 
-        when(contratRepository.findByContratID(anyString())).thenReturn(Optional.empty());
+        when(contratRepository.findByContratId(anyString())).thenReturn(Optional.empty());
         when(contratRepository.save(any(Contrat.class))).thenReturn(contrat);
 
         // When
@@ -176,9 +172,9 @@ class AuthenticationEventServiceTest {
                 .id(1L)
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
-                .contratID("newContratID").build();
+                .contratId("newContratID").build();
 
-        when(contratRepository.findByContratID(anyString())).thenReturn(Optional.of(contrat));
+        when(contratRepository.findByContratId(anyString())).thenReturn(Optional.of(contrat));
         when(contratRepository.save(any(Contrat.class))).thenReturn(contrat);
 
         // When
