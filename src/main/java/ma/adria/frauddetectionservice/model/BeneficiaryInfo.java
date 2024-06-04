@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 
@@ -14,16 +15,11 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @Table(name = "beneficiaryInfo")
+@SuperBuilder
 public class BeneficiaryInfo extends BaseEntity{
     private String nature;
     private String type;
     private String name;
     @OneToOne(cascade = CascadeType.ALL)
     private Account account;
-
-    @Builder
-    public BeneficiaryInfo(Long id, LocalDateTime createdAt, LocalDateTime updatedAt, String nature) {
-        super(id, createdAt, updatedAt);
-        this.nature = nature;
-    }
 }

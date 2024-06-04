@@ -1,7 +1,11 @@
 package ma.adria.frauddetectionservice.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -12,6 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@SuperBuilder
 public class Event extends BaseEntity {
     private String reference;
     private LocalDateTime timestamp;
@@ -37,9 +42,9 @@ public class Event extends BaseEntity {
     private String motif;
 
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
     private List<FraudCheckResult> fraudCheckResults;
 
-    @Builder
     public Event(Long id, LocalDateTime createdAt, LocalDateTime updatedAt, String reference, LocalDateTime timestamp, Canal canal, LocalDateTime activityTime, String username, String bankCode, String countryCode, String segment, Location location, Contrat contrat, Device device, String motif) {
         super(id, createdAt, updatedAt);
         this.reference = reference;

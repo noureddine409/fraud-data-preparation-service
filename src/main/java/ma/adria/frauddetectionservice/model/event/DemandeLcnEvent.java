@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 import ma.adria.frauddetectionservice.model.Account;
 import ma.adria.frauddetectionservice.model.Event;
 
@@ -19,7 +20,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @Table(name = "DemandeLcn_event")
-
+@SuperBuilder
 public class DemandeLcnEvent extends Event {
     private int nombreLcn;
     @OneToOne(cascade = CascadeType.ALL)
