@@ -2,7 +2,7 @@ package ma.adria.frauddetectionservice.dispatcher;
 
 
 import lombok.extern.slf4j.Slf4j;
-import ma.adria.frauddetectionservice.dto.EventDto.*;
+import ma.adria.frauddetectionservice.dto.events.*;
 import ma.adria.frauddetectionservice.handler.EventHandler;
 import ma.adria.frauddetectionservice.handler.impl.*;
 import org.springframework.context.ApplicationContext;
@@ -36,18 +36,14 @@ public class EventDispatcher {
         eventHandlers.put(DemandeOppositionChequeEventDto.class, applicationContext.getBean(DemandeOppositionChequeEventHandler.class));
 
 
-
-
-
-
     }
 
-    public void dispatch(EventDto event) {
+    public EventDto dispatch(EventDto event) throws EventHandlerNotFoundException {
         EventHandler eventHandler = eventHandlers.get(event.getClass());
         if (eventHandler != null) {
-            eventHandler.handle(event);
+            return eventHandler.handle(event);
         } else {
-            log.warn("No handler found for event type: {}", event.getClass());
+            throw new EventHandlerNotFoundException("No handler found for event type: " + event.getClass().getName());
         }
     }
 }

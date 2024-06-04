@@ -20,7 +20,7 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 @Slf4j
-public class EventGenericServiceImpl <T extends Event> implements EventGenericService<T> {
+public class EventGenericServiceImpl<T extends Event> implements EventGenericService<T> {
 
     private final DeviceRepository deviceRepository;
     private final ContratRepository contratRepository;
@@ -51,9 +51,9 @@ public class EventGenericServiceImpl <T extends Event> implements EventGenericSe
             return null;
         }
 
-        Optional<Contrat> existingContrat = contratRepository.findByContratID(contrat.getContratID());
+        Optional<Contrat> existingContrat = contratRepository.findByContratId(contrat.getContratId());
         if (existingContrat.isPresent()) {
-            log.info("Found existing Contrat with ID: {}", contrat.getContratID());
+            log.info("Found existing Contrat with ID: {}", contrat.getContratId());
             mapHelper.mapWithSkipNull(contrat, existingContrat.get());
             Contrat updatedContrat = contratRepository.save(existingContrat.get());
             log.info("Updated Contrat: {}", updatedContrat);

@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import ma.adria.frauddetectionservice.model.BaseEntity;
+import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
@@ -15,6 +15,7 @@ import ma.adria.frauddetectionservice.model.BaseEntity;
 @NoArgsConstructor
 @Entity
 @Table(name = "account")
+@SuperBuilder
 public class Account extends BaseEntity {
     @Column(unique = true, nullable = false)
     private String accountNumber;

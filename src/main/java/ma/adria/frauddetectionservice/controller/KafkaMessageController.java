@@ -1,6 +1,8 @@
 package ma.adria.frauddetectionservice.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import ma.adria.frauddetectionservice.model.event.AuthenticationEvent;
+import ma.adria.frauddetectionservice.model.event.RemiseOrdreEvent;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

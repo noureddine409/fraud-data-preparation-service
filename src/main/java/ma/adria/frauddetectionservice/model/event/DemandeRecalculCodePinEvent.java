@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 import ma.adria.frauddetectionservice.model.Account;
 import ma.adria.frauddetectionservice.model.Event;
 @Getter
@@ -13,6 +14,7 @@ import ma.adria.frauddetectionservice.model.Event;
 @NoArgsConstructor
 @Entity
 @Table(name = "demandeRecalculCodePin_event")
+@SuperBuilder
 public class DemandeRecalculCodePinEvent extends Event {
     @OneToOne(cascade = CascadeType.ALL)
     private Account account;

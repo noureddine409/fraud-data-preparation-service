@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 import ma.adria.frauddetectionservice.model.Account;
 import ma.adria.frauddetectionservice.model.BeneficiaryInfo;
 import ma.adria.frauddetectionservice.model.Event;
@@ -17,6 +18,7 @@ import ma.adria.frauddetectionservice.model.Event;
 @NoArgsConstructor
 @Entity
 @Table(name = "gestionBenificiaire_event")
+@SuperBuilder
 public class BeneficiaryInfoEvent extends Event {
     private String action;
     @OneToOne(cascade = CascadeType.ALL)
