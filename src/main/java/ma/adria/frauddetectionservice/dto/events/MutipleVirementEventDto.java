@@ -1,6 +1,7 @@
 package ma.adria.frauddetectionservice.dto.events;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
@@ -13,6 +14,7 @@ import java.util.List;
 @Setter
 @ToString(callSuper = true)
 @SuperBuilder
+@NoArgsConstructor
 public class MutipleVirementEventDto extends EventDto{
     private int nombreOperations;
     private List<CreditorDto> creditors ;

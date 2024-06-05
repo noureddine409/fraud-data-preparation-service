@@ -1,6 +1,7 @@
 package ma.adria.frauddetectionservice.dto.events;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
@@ -12,6 +13,7 @@ import ma.adria.frauddetectionservice.model.event.CarteTransactionEvent;
 @Setter
 @ToString(callSuper = true)
 @SuperBuilder
+@NoArgsConstructor
 public class CarteTransactionEventDto extends EventDto {
     private String cardNumber;
     private String libelleOperation;
