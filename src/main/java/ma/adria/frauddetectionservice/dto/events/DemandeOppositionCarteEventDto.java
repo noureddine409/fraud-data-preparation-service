@@ -2,6 +2,7 @@ package ma.adria.frauddetectionservice.dto.events;
 
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 @Setter
 @ToString(callSuper = true)
 @SuperBuilder
+@NoArgsConstructor
 public class DemandeOppositionCarteEventDto extends EventDto {
     private AccountDto account;
     private String motif;
