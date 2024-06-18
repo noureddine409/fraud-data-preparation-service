@@ -12,17 +12,16 @@ import ma.adria.frauddetectionservice.model.Creditor;
 import ma.adria.frauddetectionservice.model.Virement;
 
 import java.util.List;
+
 @Getter
 @Setter
 @ToString(callSuper = true)
 @NoArgsConstructor
 @Entity
 @Table(name = "mutipleVirement_event")
-
 public class MutipleVirementEvent extends Virement {
     private int nombreOperations;
     @OneToMany(cascade = CascadeType.ALL)
     @ToString.Exclude
-    private List<Creditor> creditors ;
-
+    private List<Creditor> creditors;
 }

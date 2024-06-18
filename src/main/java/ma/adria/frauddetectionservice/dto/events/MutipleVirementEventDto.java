@@ -15,7 +15,7 @@ import java.util.List;
 @ToString(callSuper = true)
 @SuperBuilder
 @NoArgsConstructor
-public class MutipleVirementEventDto extends EventDto{
+public class MutipleVirementEventDto extends VirementDto{
     private int nombreOperations;
     private List<CreditorDto> creditors ;
 

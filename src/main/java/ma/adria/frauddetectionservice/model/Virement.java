@@ -7,8 +7,6 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @ToString(callSuper = true)
@@ -19,10 +17,9 @@ import java.time.LocalDateTime;
 public class Virement extends Event {
     @Enumerated(EnumType.STRING)
     private ExecutionDateType type;
-    private String curency;//devise
+    private String currency;
     @OneToOne(cascade = CascadeType.ALL)
     private ExecutionFrequency executionFrequency;
-
 
     public enum ExecutionDateType {
         Immediate, Deferred, Permanent

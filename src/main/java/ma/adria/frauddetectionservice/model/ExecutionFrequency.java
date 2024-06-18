@@ -22,6 +22,6 @@ public class ExecutionFrequency extends BaseEntity {
     private LocalDateTime firstTransactionDateTime;
 
     public enum ExecutionFrequencyType {
-        YEARLY, MONTHLY, WEEKLY, DAILY
+        YEARLY, MONTHLY, WEEKLY
     }
 }

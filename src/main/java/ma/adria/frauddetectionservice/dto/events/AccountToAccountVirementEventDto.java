@@ -13,7 +13,7 @@ import ma.adria.frauddetectionservice.dto.CreditorDto;
 @ToString(callSuper = true)
 @NoArgsConstructor
 @SuperBuilder
-public class AccountToAccountVirementEventDto extends EventDto {
+public class AccountToAccountVirementEventDto extends VirementDto {
     private CreditorDto creditor;
 
     @Override
